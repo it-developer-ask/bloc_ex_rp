@@ -14,7 +14,9 @@ class BlocEx extends StatelessWidget {
       title: 'BlocEx',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurple,
+        ),
         useMaterial3: true,
       ),
       home: const LandingScreen(),
