@@ -32,9 +32,9 @@ class SliderAndSwitch extends StatelessWidget {
                         return CupertinoSwitch(
                           value: state.isSwitchOn,
                           onChanged: (value) {
-                            context
-                                .read<SliderAndSwitchBloc>()
-                                .add(SwitchOnAndOff());
+                            context.read<SliderAndSwitchBloc>().add(
+                                  SwitchOnAndOff(),
+                                );
                           },
                         );
                       },
@@ -59,7 +59,9 @@ class SliderAndSwitch extends StatelessWidget {
                       value: state.sliderValue,
                       onChanged: (double value) {
                         context.read<SliderAndSwitchBloc>().add(
-                              SliderEvent(sliderValue: value),
+                              SliderEvent(
+                                sliderValue: value,
+                              ),
                             );
                       },
                     );

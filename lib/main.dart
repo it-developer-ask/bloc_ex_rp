@@ -1,7 +1,10 @@
+import 'package:bloc_ex/repositories/repositories.dart';
 import 'presentation/landing_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Repositories.initialize();
   runApp(const BlocEx());
 }
 

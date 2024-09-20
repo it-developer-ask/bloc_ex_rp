@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'slider_and_switch.dart';
 import 'counter_screen.dart';
 import 'image_picker.dart';
+import 'data_call.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
@@ -16,7 +17,6 @@ class LandingScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Row(),
               LandingScreenButton(
                 title: "Counter Example",
                 toPush: CounterScreen(),
@@ -28,6 +28,10 @@ class LandingScreen extends StatelessWidget {
               LandingScreenButton(
                 title: "Pick a Image",
                 toPush: ImagePicker(),
+              ),
+              LandingScreenButton(
+                title: "Data Call",
+                toPush: DataCall(),
               ),
             ],
           ),
@@ -45,17 +49,20 @@ class LandingScreenButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => toPush,
-          ),
-        );
-      },
-      child: Text(
-        title,
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      child: MaterialButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => toPush,
+            ),
+          );
+        },
+        child: Text(
+          title,
+        ),
       ),
     );
   }
